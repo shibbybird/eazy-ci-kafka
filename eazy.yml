@@ -1,0 +1,13 @@
+eazyVersion: '1.0'
+image: 'shibbybird/eazy-ci-kafka'
+releases:
+  - 'latest'
+  - '0.10.1.0'
+deployment:
+  ports:
+    - 9092
+    - 2181
+  health:
+    - '/bin/sh'
+    - '-c'
+    - 'while ! /opt/kafka_2.11-0.10.1.0/bin/kafka-topics.sh --zookeeper host.docker.internal:2181 --create --replication-factor 1 --paritions 1 --topic healt-check; do sleep 1; done; exit;'
