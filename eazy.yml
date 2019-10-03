@@ -1,4 +1,5 @@
 eazyVersion: '1.0'
+name: 'eazy-ci-kafka'
 image: 'shibbybird/eazy-ci-kafka'
 releases:
   - 'latest'
